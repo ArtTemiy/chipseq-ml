@@ -6,4 +6,6 @@ Cкачал файлы с данными эксперимента z-dna - `curax
 
 Анализ данных z-dna (`explore_exp_data.ipynb`) - посмотреть на длины регионов, количество регионов и тд.
 Нашел юнифай-длину и количество бп на бин, записал эти данные в `global_data_params.json`.
-Сами регионы записал в `curax***.regions-unified.bed`, отсортированные в `curax***.regions-unified.sorted.bed`.
+Сгенерировал центрированные унифицированные файлы - позитивный и негативный класс (`make_target_data.ipynb`)
+Сами регионы записал в `experiment_data` - `curax***.regions.bed` и `curax***.regions.discrete.bed`, отсортированные в `curax***.regions.sorted.bed` и `curax***.regions.discrete.sorted.bed` соответственнно.
+С помощью `extract_features.cpp` нашел силу сигнала на полученных регионах, результаты в `feature_data`. Положительный и отрицательный классы в `positive` и `negative` соответственно. Это файлы с признаками для обучения.

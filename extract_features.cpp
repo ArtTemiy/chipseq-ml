@@ -141,7 +141,7 @@ int main() {
     std::cout << "Positive:" << std::endl;
     for (const auto& entry : std::filesystem::directory_iterator(PATH_TO_RAW_DATA)) {
         auto data_name = entry.path().stem().string();
-        std::cout << data_name;
+        std::cout << data_name << " : " << EXP_DATA_PATH + EXP_NAME + ".regions.sorted.bed";
         std::ifstream exp_file(EXP_DATA_PATH + EXP_NAME + ".regions.sorted.bed");
         std::ifstream data_file(entry.path());
         std::ofstream out_file(OUT_PATH + "positive/" + data_name + ".pkbns");
@@ -153,7 +153,7 @@ int main() {
     std::cout << "Negative:" << std::endl;
     for (const auto& entry : std::filesystem::directory_iterator(PATH_TO_RAW_DATA)) {
         auto data_name = entry.path().stem().string();
-        std::cout << data_name;
+        std::cout << data_name << " : " << EXP_DATA_PATH + EXP_NAME + "-random.regions.sorted.bed";
         std::ifstream exp_file(EXP_DATA_PATH + EXP_NAME + "-random.regions.sorted.bed");
         std::ifstream data_file(entry.path());
         std::ofstream out_file(OUT_PATH + "negative/" + data_name + ".pkbns");
